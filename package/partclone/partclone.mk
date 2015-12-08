@@ -14,12 +14,14 @@ PARTCLONE_SITE = https://github.com/Thomas-Tsai/partclone/archive
 
 define PARTCLONE_LINK_LIBRARIES_TOOL
 	ln -f -s $(@D)/../xfsprogs-*/include/xfs $(@D)/../../staging/usr/include/
-    ln -f -s $(@D)/../xfsprogs-*/libxfs/.libs/libxfs.* $(@D)/../../staging/usr/lib/
+	ln -f -s $(@D)/../xfsprogs-*/libxfs/.libs/libxfs.* $(@D)/../../staging/usr/lib/
 endef
 
-define PARTCLONE_CONFIGURE_CMDS
+define PARTCLONE_FIX_PXE
 	sed -i 's/fail-mbr//' $(@D)/Makefile.in
 endef
+
+PARTCLONE_PRE_BUILD_HOOKS += PARTCLONE_FIX_PXE
 
 PARTCLONE_POST_PATCH_HOOKS += PARTCLONE_LINK_LIBRARIES_TOOL
 
