@@ -13,7 +13,6 @@ The latest tested version of Buildroot was 2016.02
 
 ```bash
 # Get Buildroot's files
-git clone git://git.buildroot.net/buildroot
 wget https://buildroot.org/downloads/buildroot-2016.02.tar.gz
 tar xzvf buildroot-2016.02.tar.gz
 # Get this repo's files
