@@ -1,0 +1,17 @@
+[Unit]
+Description=FLDT imaging on vt2
+After=getty.target network-online.target
+Conflicts=getty@tty2.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/fldt.sh
+StandardInput=tty-force
+TTYPath=/dev/tty2
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=default.target

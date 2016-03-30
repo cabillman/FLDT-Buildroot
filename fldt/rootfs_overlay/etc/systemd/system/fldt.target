@@ -1,0 +1,6 @@
+[Unit]
+Description=FLDT Imaging System Target
+Requires=multi-user.target
+Conflicts=rescue.service rescue.target
+After=multi-user.target basic.target rescue.service rescue.target
+AllowIsolate=yes
