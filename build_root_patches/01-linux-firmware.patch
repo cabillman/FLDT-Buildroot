@@ -1,15 +1,30 @@
---- /buildroot-2016.02/package/linux-firmware/Config.in
-+++ /fldt-buildroot-2016.02/package/linux-firmware/Config.in
-@@ -85,6 +85,12 @@
- 	bool "Intel iwlwifi 6000G2A"
- 	help
+--- buildroot-2016.02/package/linux-firmware/Config.in	2016-03-01 15:47:30.000000000 -0500
++++ buildroot-2016.02-iwlfirmware/package/linux-firmware/Config.in	2016-05-06 12:43:52.313874141 -0400
+@@ -87,6 +87,12 @@
  	  Firmware files for the Intel Wifi 6000G2A devices supported by
-+	  the iwlwifi kernel driver.
-+
+ 	  the iwlwifi kernel driver.
+ 
 +config BR2_PACKAGE_LINUX_FIRMWARE_IWLWIFI_6000G2B
 +	bool "Intel iwlwifi 6000G2B"
 +	help
 +	  Firmware files for the Intel Wifi 6000G2B devices supported by
++	  the iwlwifi kernel driver.
++
+ config BR2_PACKAGE_LINUX_FIRMWARE_IWLWIFI_7260
+ 	bool "Intel iwlwifi 7260"
+ 	select BR2_PACKAGE_LINUX_FIRMWARE_IWLWIFI_NEED_REV
+@@ -94,6 +100,13 @@
+ 	  Firmware files for the Intel Wifi 7260 devices supported by
  	  the iwlwifi kernel driver.
  
- config BR2_PACKAGE_LINUX_FIRMWARE_IWLWIFI_7260
++config BR2_PACKAGE_LINUX_FIRMWARE_IWLWIFI_7260_16
++	bool "Intel iwlwifi 7260 version 16"
++	select BR2_PACKAGE_LINUX_FIRMWARE_IWLWIFI_NEED_REV
++	help
++	  Firmware files for the Intel Wifi 7260 devices supported by
++	  the iwlwifi kernel driver version 17.
++
+ config BR2_PACKAGE_LINUX_FIRMWARE_IWLWIFI_7265
+ 	bool "Intel iwlwifi 7265"
+ 	select BR2_PACKAGE_LINUX_FIRMWARE_IWLWIFI_NEED_REV
+
